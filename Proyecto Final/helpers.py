@@ -1,4 +1,5 @@
 import os
+import re
 import platform
 
 
@@ -11,5 +12,14 @@ def leer_texto(longitud_min=0,longitud_max=100,mensaje=None):
         texto=input("> ")
         if longitud_min<=len(texto)<=longitud_max:
             return texto
-
- 
+        
+def dni_valido(dni,lista):
+    if not re.match('[0-9]{2}[A-Z]$',dni):
+        print("DNI incorrecto, debe cumplir con el formato")
+        return False
+    
+    for cliente in lista:
+        if cliente.dni==dni:
+            print("DNI ya registrado")
+            return False
+    return True
