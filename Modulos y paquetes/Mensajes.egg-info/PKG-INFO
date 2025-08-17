@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: Mensajes
+Version: 1.0
+Summary: Un paquete para saludar y despedir
+Home-page: https://www.google.com
+Author: Gerardo Nuñez
+Author-email: hola@yo.com
+Dynamic: author
+Dynamic: author-email
+Dynamic: home-page
+Dynamic: summary
