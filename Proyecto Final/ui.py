@@ -66,6 +66,7 @@ class CreateClientWindow(Toplevel, CenterWidgetMixin):
             parent='', index='end', iid=self.dni.get(),
             values=(self.dni.get(),self.nombre.get(),self.apellido.get())
         )
+        db.Clientes.crear(self.dni.get(),self.nombre.get(),self.apellido.get())
         self.close()
 
     def close(self):
@@ -208,6 +209,7 @@ class MainWindow(Tk, CenterWidgetMixin):
             )
             if confirmar:
                 self.treeview.delete(cliente)
+                db.Clientes.borrar(campos[0])
     
     def create(self):
         CreateClientWindow(self)
